@@ -1,0 +1,34 @@
+body {
+    background: rgba(232, 203, 192, 0.6);
+    background: -webkit-linear-gradient(to top, rgba(99, 111, 164, 0.6), rgba(232, 203, 192, 0.6));
+    background: linear-gradient(to top, rgba(99, 111, 164, 0.6), rgba(232, 203, 192, 0.6));
+    
+}
+
+.main  {
+    background-color: rgba(99, 111, 164, 0.2);
+    padding: 1px 30px 30px 50px;
+}
+
+.sub {
+    display: flex;
+    flex-direction: column;
+}
+
+blockquote {
+    font-size: 60px;
+    color: white;
+    border-left: 5px solid white;
+}
+
+#gauge {
+    width: 240px;
+    height: 240px;
+    align-self: center;
+}
+
+#line {
+    width: 90%;
+    height: 400px;
+    align-self: center;
+}
