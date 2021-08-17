@@ -1,18 +1,18 @@
 var firebaseConfig = {
-apiKey: "AIzaSyDtXOvG9tmXRYjDD7O3EYjzz2syivlbTAA",
-authDomain: "horno-panadero.firebaseapp.com",
-databaseURL: "https://horno-panadero-default-rtdb.firebaseio.com",
-projectId: "horno-panadero",
-storageBucket: "horno-panadero.appspot.com",
-messagingSenderId: "310370306205",
-appId: "1:310370306205:web:64ff344cc779b97dffac74"
+    apiKey: "AIzaSyDtXOvG9tmXRYjDD7O3EYjzz2syivlbTAA",
+    authDomain: "horno-panadero.firebaseapp.com",
+    databaseURL: "https://horno-panadero-default-rtdb.firebaseio.com",
+    projectId: "horno-panadero",
+    storageBucket: "horno-panadero.appspot.com",
+    messagingSenderId: "310370306205",
+    appId: "1:310370306205:web:64ff344cc779b97dffac74"
 };
 
 firebase.initializeApp(firebaseConfig);
 
 google.charts.load('current', {'packages':['gauge', 'corechart']});
 google.charts.setOnLoadCallback(drawChartTemperature);
-google.charts.setOnLoadCallback(drawChartLine1);
+google.charts.setOnLoadCallback(drawChartLine);
 
 function drawChartTemperature() {
     var temperature = firebase.database().ref('Nodemcu/TThermok').limitToLast(1);
@@ -26,8 +26,6 @@ function drawChartTemperature() {
                 value = temperature[key];
                 data.push(value);
             }
-        }
-        if (data) {
             temperature = data[0];
         }
     });
@@ -59,7 +57,7 @@ function drawChartTemperature() {
     }, 13000);
 }
 
-function drawChartLine1() {
+function drawChartLine() {
     const cant = 50;
     var temperature = firebase.database().ref('Nodemcu/TThermok').limitToLast(cant);
 
